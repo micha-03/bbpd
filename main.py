@@ -23,7 +23,7 @@ class OperacionesMatriz:
         self.mostrar_matriz()
 
     def ingresar_tamano(self):
-        #Funcion 1
+        """INgreso del tamaño de la matriz"""
         try:
             self.filas = int(input("Введите количество строк: "))
             self.columnas = int(input("Введите количество столбцов: "))
@@ -37,7 +37,7 @@ class OperacionesMatriz:
             return False
 
     def crear_matriz_manual(self):
-        #Matriz manual
+        """Ingreso manual de la matriz"""
         self.matriz = []
         print("Создать вручную")
         for i in range(self.filas):
@@ -54,17 +54,17 @@ class OperacionesMatriz:
         print("Матрица вручную")
 
     def crear_matriz_automatica(self):
-        #Matriz automatica
+        """Matriz automatica con numeros de 0 a 100"""
         self.matriz = []
-        for i in range(self.filas):
+        for _ in range(self.filas):
             fila = []
-            for j in range(self.columnas):
+            for _ in range(self.columnas):
                 fila.append(random.randint(0, 100))
             self.matriz.append(fila)
         print("Автоматическая матрица")
 
     def crear_matriz(self):
-        #Funcion 2: Creacion matriz
+        """Creación de una matriz"""
         if self.filas == 0 or self.columnas == 0:
             print("Размер матрицы")
             return
@@ -81,7 +81,7 @@ class OperacionesMatriz:
             self.crear_matriz_automatica()
 
     def mostrar_matriz(self):
-        #Funcion : matriz creada
+        """Mostrar la matriz actual en la pantalla"""
         if not self.matriz:
             print(" не создан")
             return
@@ -93,10 +93,10 @@ class OperacionesMatriz:
             print()
 
     def funcion_4(self):
-        #Funcion 4: suma de elementos impares
+        """Funcion 4: suma de elementos en posiciones con indices impares"""
         if not self.matriz:
             print("Матрица не создан")
-            return
+            return None
 
         suma_total = 0
         elementos = []
@@ -112,7 +112,7 @@ class OperacionesMatriz:
         return suma_total
 
     def funcion_6(self):
-        #funcion 6: suma por filas y columnas
+        """funcion 6: Calculo de suma de elementospor filas y columnas"""
         if not self.matriz:
             print("Матрица не создан")
             return
@@ -130,7 +130,7 @@ class OperacionesMatriz:
             print(f"Столбец {j}: {suma_columna}")
 
     def funcion_7(self):
-        #funcion 7: diagnoales principales y secundarias
+        """funcion 7: diagnoales principales y secundarias de la matriz"""
         if not self.matriz:
             print("Матрица не создан")
             return
@@ -149,10 +149,10 @@ class OperacionesMatriz:
         print("[" + ", ".join(diagonal_secundaria) + "]")
 
     def funcion_16(self):
-        #Funcion 16: cadenas con el numero 10
+        """Funcion 16: Encuentro de las filas que contienen el numero 10"""
         if not self.matriz:
             print("Матрица не создан")
-            return
+            return []
 
         filas_con_10 = []
         for i in range(self.filas):
@@ -167,7 +167,7 @@ class OperacionesMatriz:
         return filas_con_10
 
     def funcion_27(self):
-        #Funcion 27: Eliminar columna con el elemento máximo
+        """Funcion 27: Eliminar columna con el elemento máximo de la matriz"""
         if not self.matriz:
             print("Матрица не создан")
             return
@@ -202,6 +202,7 @@ class OperacionesMatriz:
             print("Невозможно удалить, только один столбец")
 
 def main():
+    #Funcion que ejecuta el menu de funciones con matrices
     operaciones = OperacionesMatriz()
 
     while True:
