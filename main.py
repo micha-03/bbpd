@@ -202,7 +202,7 @@ class OperacionesMatriz:
             print("Невозможно удалить, только один столбец")
 
 def main():
-    #Funcion que ejecuta el menu de funciones con matrices
+    """Funcion que ejecuta el menu de funciones con matrices"""
     operaciones = OperacionesMatriz()
 
     while True:
